@@ -31,11 +31,9 @@ ENV PATH="/opt/gtk/bin:${PATH}:/chrome/depot_tools"
 WORKDIR /chrome/Chromium
 # fetch chromium source code
 # ref: https://www.chromium.org/developers/how-tos/get-the-code/working-with-release-branches
-RUN git clone --depth 1 https://chromium.googlesource.com/chromium/src.git
+RUN git clone --branch "${CHROMIUM_VERSION}" --depth 1 https://chromium.googlesource.com/chromium/src.git
 
 WORKDIR /chrome/Chromium/src
-# checkout the release tag
-RUN git checkout -b build "${CHROMIUM_VERSION}"
 
 ADD .gclient /chrome/Chromium/
 WORKDIR /chrome/Chromium
