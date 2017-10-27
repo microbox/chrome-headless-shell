@@ -31,7 +31,7 @@ ENV PATH="/opt/gtk/bin:${PATH}:/chrome/depot_tools"
 WORKDIR /chrome/Chromium
 # fetch chromium source code
 # ref: https://www.chromium.org/developers/how-tos/get-the-code/working-with-release-branches
-RUN git clone https://chromium.googlesource.com/chromium/src.git
+RUN git clone --depth 10 https://chromium.googlesource.com/chromium/src.git
 
 WORKDIR /chrome/Chromium/src
 # checkout the release tag
