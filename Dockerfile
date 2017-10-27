@@ -1,22 +1,9 @@
 FROM scratch
 
-MAINTAINER e2tox <e2tox@microbox.io>
+MAINTAINER Ling <x@e2.to>
 
-ADD rootfs.tar      /
-ADD gogs.sh         /app/gogs.sh
-ADD sshd_config     /etc/default/sshd_config
+ADD ChromeHeadless.tgz /chrome
 
-# gogs require environment variable of USER
-ENV USER git
+EXPOSE 9222
 
-# ssh-keygen require the home variable
-ENV HOME /data/git
-
-VOLUME ["/data"]
-
-WORKDIR /app
-
-EXPOSE 22 3000
-
-ENTRYPOINT ["/usr/bin/env"]
-CMD ["./gogs.sh"]
+ENTRYPOINT ["/chrome/headless_shell", "--no-sandbox", "--hide-scrollbars", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222"]

@@ -1,6 +1,6 @@
-Node.js Chrome Headless
-=======================
+Chrome Headless Shell
+=====================
 
-[![Build Status](https://travis-ci.org/microbox/node-chrome-headless.svg?branch=master)](https://travis-ci.org/microbox/node-chrome-headless)
+[![Build Status](https://travis-ci.org/microbox/chrome-headless-shell.svg?branch=master)](https://travis-ci.org/microbox/chrome-headless-shell)
 
-Node.js environment with all dependencies of Chrome/Puppeteer
+The smallest docker image for Headless Chromium Shell
