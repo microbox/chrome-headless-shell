@@ -11,7 +11,7 @@ notifications:
 script:
   - docker build -t headless ./builder
   - export TARMAKER_CID=$(docker create headless)
-  - docker cp $TARMAKER_CID:/ChromeHeadless.tgz .
+  - docker cp $TARMAKER_CID:/ChromeHeadlessShell.tgz .
   - docker rm $TARMAKER_CID
 
 after_success:

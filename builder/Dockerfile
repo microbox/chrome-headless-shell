@@ -31,7 +31,7 @@ ENV PATH="/opt/gtk/bin:${PATH}:/chrome/depot_tools"
 WORKDIR /chrome/Chromium
 # fetch chromium source code
 # ref: https://www.chromium.org/developers/how-tos/get-the-code/working-with-release-branches
-RUN git clone --depth 10 https://chromium.googlesource.com/chromium/src.git
+RUN git clone --depth 1 https://chromium.googlesource.com/chromium/src.git
 
 WORKDIR /chrome/Chromium/src
 # checkout the release tag
@@ -57,4 +57,4 @@ RUN mkdir -p out/Headless && \
 
 # build chromium headless shell
 RUN ninja -C out/Headless headless_shell
-RUN tar -zcvf /ChromeHeadless.tgz out/Headless
+RUN tar -zcvf /ChromeHeadlessShell.tgz out/Headless
