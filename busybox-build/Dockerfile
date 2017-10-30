@@ -27,6 +27,7 @@ RUN mkdir -p chrome chrome/locales lib64 usr/bin usr/sbin usr/share lib/x86_64-l
 
 # =================================================
 RUN bash -c "cp -R /chrome/{headless_lib.pak,headless_shell,mus_app_resources_100.pak,mus_app_resources_200.pak,mus_app_resources_strings.pak} chrome"
+RUN cp /chrome/locales/en-US.pak chrome/locales
 
 # extract chrome headless shell dependencies
 # =================================================
