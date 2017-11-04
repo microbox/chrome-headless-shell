@@ -29,5 +29,5 @@ script:
 
 after_success:
   - docker images
-  - docker push $REPO
+  - docker push ${REPO}:${TAG}
 
