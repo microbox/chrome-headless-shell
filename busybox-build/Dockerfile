@@ -1,4 +1,5 @@
-FROM yukinying/chrome-headless:62.0.3201.2
+ARG CHROME_VERSION=latest
+FROM microbox/chrome-headless:${CHROME_VERSION}
 
 # switch to root to build image
 # =================================================
