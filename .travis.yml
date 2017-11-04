@@ -20,6 +20,7 @@ before_install:
 install:
   - sudo curl -sSL https://get.docker.com/ | sh
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker version
 
 script:
   - docker build -t busybox-build --build-arg CHROMIUM_VERSION=${VERSION} busybox-build
